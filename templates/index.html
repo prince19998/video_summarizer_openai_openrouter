@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meeting Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Meeting Summarizer</h1>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" accept=".mp3,.mp4,.wav,.m4a" required>
+                <button type="submit">Summarize</button>
+            </div>
+        </form>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if key_points %}
+        <div class="results">
+            <h2>Key Points</h2>
+            <ul>
+                {% for point in key_points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Action Items</h2>
+            <ul>
+                {% for item in action_items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

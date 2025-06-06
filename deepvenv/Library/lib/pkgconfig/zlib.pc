@@ -1,0 +1,13 @@
+prefix=D:/new_v_sum/video_summarizer/deepvenv/Library
+exec_prefix=D:/new_v_sum/video_summarizer/deepvenv/Library
+libdir=D:/new_v_sum/video_summarizer/deepvenv/Library/lib
+sharedlibdir=D:/new_v_sum/video_summarizer/deepvenv/Library/lib
+includedir=D:/new_v_sum/video_summarizer/deepvenv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
